@@ -1,0 +1,341 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 17, ../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 10, ../sass/screen.scss */
+body {
+  background: url(../img/shattered.png);
+}
+
+/* line 14, ../sass/screen.scss */
+#wrapper {
+  color: #6e6e6e;
+  max-width: 770px;
+  margin: auto;
+  padding-top: 50px;
+  font-family: 'Monda', sans-serif;
+}
+/* line 18, ../sass/screen.scss */
+#wrapper h4 {
+  margin-top: 30px;
+  font-size: 2em;
+}
+/* line 22, ../sass/screen.scss */
+#wrapper h4.firstCh {
+  margin-top: 80px;
+}
+/* line 27, ../sass/screen.scss */
+#wrapper .bsum {
+  color: #6e6e6e;
+  font-size: 0.6em;
+  float: right;
+  clear: both;
+  margin: 0 60px 30px 0;
+}
+/* line 35, ../sass/screen.scss */
+#wrapper h2 {
+  color: #6e6e6e;
+  font-size: 3em;
+  float: right;
+  margin: 0 60px 0px 0;
+  position: relative;
+}
+/* line 43, ../sass/screen.scss */
+#wrapper .textShadow:before {
+  content: attr(title);
+  position: absolute;
+  color: rgba(255, 255, 255, 0.1);
+  top: 1px;
+  left: 3px;
+}
+/* line 63, ../sass/screen.scss */
+#wrapper .navigation {
+  width: 100%;
+  height: 74px;
+  position: relative;
+  top: -200px;
+  overflow: hidden;
+}
+/* line 71, ../sass/screen.scss */
+#wrapper #leftnavi, #wrapper #rightnavi {
+  width: 56px;
+  height: 72px;
+  overflow: hidden;
+}
+/* line 77, ../sass/screen.scss */
+#wrapper #leftnavi {
+  float: left;
+}
+/* line 81, ../sass/screen.scss */
+#wrapper #rightnavi {
+  float: right;
+}
+/* line 85, ../sass/screen.scss */
+#wrapper #leftnavi div:first-child, #wrapper #rightnavi div:first-child {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+}
+/* line 91, ../sass/screen.scss */
+#wrapper .alignHelper {
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+/* line 97, ../sass/screen.scss */
+#wrapper #link_left, #wrapper #link_right {
+  text-decoration: none;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 72px;
+  outline: medium none;
+  color: black;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  top: -72px;
+}
+/* line 110, ../sass/screen.scss */
+#wrapper #link_left {
+  background: url(../img/leftarrowWhite.png) 22px 11px no-repeat transparent;
+}
+/* line 114, ../sass/screen.scss */
+#wrapper #link_left:hover {
+  background: url(../img/leftarrowWhite.png) 2px 11px no-repeat transparent;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+/* line 119, ../sass/screen.scss */
+#wrapper #link_left:active {
+  background: url(../img/leftarrowWhite.png) -6px 11px no-repeat transparent;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+/* line 124, ../sass/screen.scss */
+#wrapper #link_right {
+  background: url(../img/rightarrowWhite.png) -27px 11px no-repeat transparent;
+}
+/* line 128, ../sass/screen.scss */
+#wrapper #link_right:hover {
+  background: url(../img/rightarrowWhite.png) -7px 11px no-repeat transparent;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+/* line 133, ../sass/screen.scss */
+#wrapper #link_right:active {
+  background: url(../img/rightarrowWhite.png) 2px 11px no-repeat transparent;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+/* line 138, ../sass/screen.scss */
+#wrapper .navileft, #wrapper .naviright {
+  width: 5px;
+  height: 5px;
+  display: block;
+  background: #6e6e6e;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  border-radius: 100px;
+  position: relative;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+/* line 149, ../sass/screen.scss */
+#wrapper .navileft {
+  float: left;
+  margin-left: 30px;
+}
+/* line 154, ../sass/screen.scss */
+#wrapper .naviright {
+  float: right;
+  margin-right: 30px;
+}
+/* line 159, ../sass/screen.scss */
+#wrapper #leftnavi:hover .navileft {
+  width: 50px;
+  height: 50px;
+  background: #BDBDBD;
+  margin-left: 0px;
+}
+/* line 166, ../sass/screen.scss */
+#wrapper #rightnavi:hover .naviright {
+  width: 50px;
+  height: 50px;
+  background: #BDBDBD;
+  margin-right: 0px;
+}
+/* line 175, ../sass/screen.scss */
+#wrapper #container {
+  max-width: 648px;
+  height: auto;
+  display: block;
+  overflow: hidden;
+  margin: auto;
+  clear: both;
+}
+/* line 184, ../sass/screen.scss */
+#wrapper #container2 {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: hidden;
+  margin: auto;
+}
+/* line 194, ../sass/screen.scss */
+#wrapper #handler, #wrapper #handler2 {
+  width: 100%;
+  height: auto;
+}
+/* line 199, ../sass/screen.scss */
+#wrapper #handler > div, #wrapper #handler2 > div {
+  display: inline-block;
+  min-height: 325px;
+  width: 20px;
+  float: left;
+  color: #6e6e6e;
+}
+/* line 206, ../sass/screen.scss */
+#wrapper #handler > div img, #wrapper #handler2 > div img {
+  margin: auto;
+}
+/* line 210, ../sass/screen.scss */
+#wrapper #handler > div h1, #wrapper #handler2 > div h1 {
+  font-size: 5em;
+}
+/* line 214, ../sass/screen.scss */
+#wrapper #handler > div.one, #wrapper #handler > div.two, #wrapper #handler > div.three, #wrapper #handler > div.four, #wrapper #handler > div.five, #wrapper #handler > div.six, #wrapper #handler2 > div.one, #wrapper #handler2 > div.two, #wrapper #handler2 > div.three, #wrapper #handler2 > div.four, #wrapper #handler2 > div.five, #wrapper #handler2 > div.six {
+  background: transparent;
+}
+/* line 218, ../sass/screen.scss */
+#wrapper #handler > div.one .contentHelper, #wrapper #handler > div.two .contentHelper, #wrapper #handler > div.three .contentHelper, #wrapper #handler > div.four .contentHelper, #wrapper #handler > div.five .contentHelper, #wrapper #handler > div.six .contentHelper, #wrapper #handler2 > div.one .contentHelper, #wrapper #handler2 > div.two .contentHelper, #wrapper #handler2 > div.three .contentHelper, #wrapper #handler2 > div.four .contentHelper, #wrapper #handler2 > div.five .contentHelper, #wrapper #handler2 > div.six .contentHelper {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 225, ../sass/screen.scss */
+#wrapper #handler > div.one h2, #wrapper #handler > div.two h2, #wrapper #handler > div.three h2, #wrapper #handler > div.four h2, #wrapper #handler > div.five h2, #wrapper #handler > div.six h2, #wrapper #handler2 > div.one h2, #wrapper #handler2 > div.two h2, #wrapper #handler2 > div.three h2, #wrapper #handler2 > div.four h2, #wrapper #handler2 > div.five h2, #wrapper #handler2 > div.six h2 {
+  font-size: 3em;
+  margin: 10px 0 0 0;
+}
+/* line 229, ../sass/screen.scss */
+#wrapper #handler > div.one h2.bigger, #wrapper #handler > div.two h2.bigger, #wrapper #handler > div.three h2.bigger, #wrapper #handler > div.four h2.bigger, #wrapper #handler > div.five h2.bigger, #wrapper #handler > div.six h2.bigger, #wrapper #handler2 > div.one h2.bigger, #wrapper #handler2 > div.two h2.bigger, #wrapper #handler2 > div.three h2.bigger, #wrapper #handler2 > div.four h2.bigger, #wrapper #handler2 > div.five h2.bigger, #wrapper #handler2 > div.six h2.bigger {
+  font-size: 5em;
+}
+/* line 234, ../sass/screen.scss */
+#wrapper #handler > div.one p, #wrapper #handler > div.two p, #wrapper #handler > div.three p, #wrapper #handler > div.four p, #wrapper #handler > div.five p, #wrapper #handler > div.six p, #wrapper #handler2 > div.one p, #wrapper #handler2 > div.two p, #wrapper #handler2 > div.three p, #wrapper #handler2 > div.four p, #wrapper #handler2 > div.five p, #wrapper #handler2 > div.six p {
+  margin-top: 30px;
+  font-size: 1.5em;
+  clear: both;
+  float: right;
+  text-align: right;
+  width: 70%;
+}
+/* line 245, ../sass/screen.scss */
+#wrapper #handler ul, #wrapper #handler2 ul {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+/* line 251, ../sass/screen.scss */
+#wrapper #handler ul li, #wrapper #handler2 ul li {
+  background: aqua;
+  width: 33.33333%;
+  height: 100%;
+  display: inline-block;
+}
+/* line 258, ../sass/screen.scss */
+#wrapper #handler ul li.color, #wrapper #handler2 ul li.color {
+  background: pink;
+}
+/* line 267, ../sass/screen.scss */
+#wrapper #handler2 > div {
+  min-height: 30px;
+}
+/* line 270, ../sass/screen.scss */
+#wrapper #handler2 > div h1 {
+  width: 100%;
+  text-align: center;
+}
+/* line 278, ../sass/screen.scss */
+#wrapper .transitions {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}

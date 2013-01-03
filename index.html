@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta charset="utf-8">
+	  <title>Slida</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="responsive slider">
+    <meta name="author" content="bobisum">
+
+    <link href='http://fonts.googleapis.com/css?family=Monda:400,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="stylesheets/screen.css">
+
+	<!-- syntaxhighlighter -->
+	<script type="text/javascript" src="js/shCore.js"></script>
+	<script type="text/javascript" src="js/shBrushJScript.js"></script>
+	<script type="text/javascript" src="js/shBrushCss.js"></script>
+	<script type="text/javascript" src="js/shBrushXml.js"></script>
+	<link type="text/css" rel="stylesheet" href="stylesheets/shCoreDefault.css"/>
+	<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+</head>
+<body>
+
+
+<!-- the content -->
+
+<div id="wrapper">
+	<h2 class="textShadow" title="Slida">Slida</h2>
+	<p class="bsum textShadow" title="bobisum 's">bobisum 's</p>
+	<div id="container"> <!-- demo slider one -->
+		<div id="handler">
+			<div class="one">
+				<div class="contentHelper">
+					<h2 class="textShadow bigger" title="Slida">Slida</h2>
+					<p>is a lite, fully responsive JQuery carousel plugin that uses CSS3 transitions if available.</p>
+				</div>
+			</div>
+			<div class="two">
+				<div class="contentHelper">
+					<h2 class="textShadow" title="It offers">It offers</h2>
+					<p>a few (for now) options that the user can easily choose from.</p>
+				</div>
+			</div>
+			<div class="three">
+				<div class="contentHelper">
+					<h2 class="textShadow" title="Options">Options:</h2>
+					<p>There are 2 main options to choose from: autoanimate and elements count on stage (cool a?!).</p>
+				</div>
+			</div>
+			<div class="four">
+				<div class="contentHelper">
+					<h2 class="textShadow" title="No. of Elements">No. of Elements</h2>
+					<p>You can choose the numbers of the elements that you see on stage (default is 1), and by hitting the left or right arrow you get a movement of only one element (like the slida that has autoanimate on this page).</p>
+				</div>
+			</div>
+			<div class="five">
+				<div class="contentHelper">
+					<h2 class="textShadow" title="Autoanimate">Autoanimate</h2>
+					<p>For now when you use the autoanimate: true; (default is false) you get a self moving slider, one element by time and a hover-stop function which resumes on hover-out with the time left of the animation.</p>
+				</div>
+			</div>
+			<div class="six">
+				<div class="contentHelper">
+					<h2 class="textShadow" title="Autoanimate">Using it</h2>
+					<p>is pretty simple. Just embed JQuery latest and Slida.js on your page and follow the instructions bellow to set up you html, css and js code.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="navigation">
+		<div id="leftnavi">
+			<div>
+				<span class="navileft"></span>
+			</div><div class="alignHelper"></div>
+			<a href="#" id="link_left"></a>
+		</div>
+		<div id="rightnavi">
+			<div>
+				<span class="naviright"></span>
+			</div><div class="alignHelper"></div>
+			<a href="#" id="link_right"></a>
+		</div>
+
+	</div>
+	<div id="container2"> <!-- demo slider two -->
+		<div id="handler2">
+			<div class=""><h1>1</h1></div>
+			<div class=""><h1>2</h1></div>
+			<div class=""><h1>3</h1></div>
+			<div class=""><h1>4</h1></div>
+			<div class=""><h1>5</h1></div>
+			<div class=""><h1>6</h1></div>
+			<div class=""><h1>7</h1></div>
+			<div class=""><h1>8</h1></div>
+			<div class=""><h1>9</h1></div>
+			<div class=""><h1>10</h1></div>
+		</div>
+	</div>
+
+	<h4 class="textShadow firstCh" title="HTML">HTML</h4>
+	<pre class="brush: html;">
+	<div id="container">
+		<div id="handler">
+			<div class="element">
+				<!-- your content here -->
+			</div>
+		</div>
+	</div>
+	</pre>
+
+	<h4 class="textShadow" title="CSS">CSS</h4>
+	<pre class="brush: css;">
+	#container {
+	  max-width: 648px;
+	  height: auto;
+	  display: block;
+	  overflow: hidden;
+	}
+
+	#handler{
+	  width: 100%;
+	  height: auto;
+	}
+
+	.element{
+	  display: block;
+	  min-height: 325px; // what you want
+	  width: 20px; // wont be the real widht you might wont to set this one as you wish :)
+	  float: left;
+	}
+
+	// the transition class it must have the name transitions but you can change the settings as you wish
+	.transitions {
+	  -webkit-transition: all 1s ease;
+	  -moz-transition: all 1s ease;
+	  -o-transition: all 1s ease;
+	  transition: all 1s ease;
+	}
+	</pre>
+
+	<h4 class="textShadow" title="JS">JS</h4>
+	<pre class="brush: js;">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script type="text/javascript" src="Slida.js"></script>
+
+	<script type="text/javascript">
+	$(document).ready(function () {
+
+		$('#handler').create_slider({
+			l_left: $('#link_right'),
+			l_right: $('#link_left')
+		});
+
+	});
+	</script>
+	</pre>
+
+	<h4 class="textShadow" title="Options">Options</h4>
+	<pre class="brush: js;">
+		autoanimate: false, // autoanimate?! (def false) if you add auto animate arrows dont work for now
+		b_count: 3, // count of elements on stage (def 1)
+		easing_type: 'swing', // easing type - choose from jquery easing or add another library ('swing')
+        delay_time: 1000, // autoanimate delay
+        delay_time_after_stop: 200, // delay after hover out
+        width: 100,
+		l_left: $('#link_right') // select by id left arrow
+		l_right: $('#link_left') // select by id right arrow
+	</pre>
+</div>
+
+
+<!-- the scripts -->
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="Slida.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+
+	$('#handler').create_slider({
+		l_left: $('#link_right'),
+		l_right: $('#link_left')
+	});
+
+	$('#handler2').create_slider({
+		autoanimate: true,
+		b_count: 3
+	});
+
+});
+</script>
+	
+</body>
+</html>
