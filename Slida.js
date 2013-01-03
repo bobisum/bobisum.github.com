@@ -48,12 +48,10 @@ jQuery(document).ready(function ($) {
         var v = ['ms', 'Khtml', 'O', 'Moz', 'Webkit', ''];
         while( v.length )
           if( v.pop() + 'Transition' in document.body.style ){
-             o.support = 1;
-             console.log("your browser supports transitions"); 
+             o.support = 1; 
              return true;
           }
             o.support = 0;
-            console.log("your browser doesn't support transitions");
             return false;
         })();
 
@@ -134,7 +132,6 @@ jQuery(document).ready(function ($) {
             if (o.autoanimate == false) {
               b = $('>div', a);
               b.addClass('transitions');
-              console.log('added transitions');
             };
 
           });
@@ -151,8 +148,6 @@ jQuery(document).ready(function ($) {
               move_right_css();
           });
         } else {
-
-          console.log('no transitions available');
 
           o.l_left.on('click', function(event){
             event.preventDefault();
