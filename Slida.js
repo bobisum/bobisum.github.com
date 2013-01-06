@@ -5,7 +5,7 @@ jQuery(document).ready(function ($) {
     create_slider: function(options){
 
       var defaults = {
-        b_count: 1, 
+        element_count: 1, 
         animation_time: 500,
         easing_type: 'swing',
         delay_time: 1000,
@@ -15,76 +15,74 @@ jQuery(document).ready(function ($) {
         time_remaining: 0,
         listen: 0,
         support: 0,
-        l_left: '',
-        l_right: ''
+        left_link: '',
+        right_link: ''
       };
 
       var options = $.extend(defaults, options);
 
       return this.each(function(){
 
-        var o = options;
+        var slida_animation_handler = $(this);
+        var slida_element = $('>div', slida_animation_handler);
+        options.width = options.width*(slida_element.length + 3);
+        var margin = (options.width/(slida_element.length + 3))/options.element_count;
+        var element_width = 100/(slida_element.length + 3);
+        element_width = element_width/options.element_count;
+        slida_animation_handler.css('margin-left', -margin +'%');
+        slida_animation_handler.css('width', options.width + '%');
+        slida_element.css('width', element_width + '%');
+        var first_element = $('>div:first-child', slida_animation_handler);
+        var second_element = $('>div:nth-child(2)', slida_animation_handler);
+        var last_element = $('>div:last-child', slida_animation_handler);
+        first_element.clone().insertAfter(last_element);
+        last_element = $('>div:last-child', slida_animation_handler);
+        first_element.clone().empty().insertBefore(first_element);
+        first_element = $('>div:first-child', slida_animation_handler);
 
-        var a = $(this);
-        var b = $('>div', a);
-        o.width = o.width*(b.length + 3);
-        var margin = o.width/(b.length + 3);
-        var b_width = 100/(b.length + 3);
-        b_width = b_width/o.b_count;
-        a.css('margin-left', -margin +'%');
-        a.css('width', o.width + '%');
-        b.css('width', b_width + '%');
-        var b_first = $('>div:first-child', a);
-        var b_second = $('>div:nth-child(2)', a);
-        var b_last = $('>div:last-child', a);
-        b_first.clone().insertAfter(b_last);
-        b_last = $('>div:last-child', a);
-        b_first.clone().empty().insertBefore(b_first);
-        b_first = $('>div:first-child', a);
-
-        var c = 0;
+        var slida_hover_listener = 0;
 
         var supportsTransitions = (function() {
-        var v = ['ms', 'Khtml', 'O', 'Moz', 'Webkit', ''];
-        while( v.length )
-          if( v.pop() + 'Transition' in document.body.style ){
-             o.support = 1; 
+        var browsers = ['ms', 'Khtml', 'O', 'Moz', 'Webkit', ''];
+        while( browsers.length )
+          if( browsers.pop() + 'Transition' in document.body.style ){
+             options.support = 1;
              return true;
           }
-            o.support = 0;
+            options.support = 0;
             return false;
         })();
 
         function callback(){
           $(this).remove();
-          b_first = $('>div:first-child', a);
-          b_first.empty();
-          b_second = $('>div', a).eq(1); // or
-          // b_second = $('div:nth-child(2)', a);
-          b_second.clone().insertAfter(b_last);
-          b_last = $('>div:last-child', a);
-          o.listen = 0;
+          first_element = $('>div:first-child', slida_animation_handler);
+          first_element.empty();
+          second_element = $('>div', slida_animation_handler).eq(1); // or
+          // second_element = $('div:nth-child(2)', slida_animation_handler);
+          second_element.clone().insertAfter(last_element);
+          last_element = $('>div:last-child', slida_animation_handler);
+          options.listen = 0;
 
-          if (o.autoanimate == true){
-            move_left(o.delay_time, o.animation_time);
+          if (options.autoanimate == true){
+            move_left(options.delay_time, options.animation_time);
           }
         }
 
         function callback_right(){
-          b_last.remove();
-          b_last = $('>div:last-child', a);
-          b_last.clone().empty().css('width', 0 + '%').insertBefore(b_first);
-          b_first.replaceWith(b_last.clone());
-          b_first = $('>div:first-child', a);
+          last_element.remove();
+          last_element = $('>div:last-child', slida_animation_handler);
+          last_element.clone().empty().css('width', 0 + '%').insertBefore(first_element);
+          first_element.replaceWith(last_element.clone());
+          first_element = $('>div:first-child', slida_animation_handler);
         };
 
         function move_left(){
-          b_first.delay(o.delay_time).animate({ width: '0'},{
-              easing: o.easing_type,
-              duration: o.animTime,
+          first_element.delay(options.delay_time).animate({ width: '0'},{
+              easing: options.easing_type,
+              duration: options.animTime,
               step: function(now, fx){
-                o.time_remaining = 0;
-                o.time_remaining = Math.round(((now*o.animation_time)/b_width)/20);
+                options.time_remaining = 0;
+                options.time_remaining = Math.round(((now*options.animation_time)/element_width)/20);
               },
               complete: callback
           });
@@ -92,73 +90,73 @@ jQuery(document).ready(function ($) {
 
         function move_right(){
           callback_right();
-          b_first.delay(o.delay_time).animate({ width: b_width + '%'},{ //animating the element widht to the desired element width with a delay of 1 sec
-              easing: o.easing_type, // the easing used
-              duration: o.animation_time // the duration of the animation
+          first_element.delay(options.delay_time).animate({ width: element_width + '%'},{
+              easing: options.easing_type,
+              duration: options.animation_time
           });
         }
 
         function move_left_css(){
-          o.listen = 1;
-          b_first.css('width', 0 + '%').bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", callback );
+          options.listen = 1;
+          first_element.css('width', 0 + '%').bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", callback );
         }
 
         function move_right_css(){
-          o.listen = 1;
+          options.listen = 1;
           callback_right();
-          b_first.width(b_width + '%').bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){ o.listen = 0; });
+          first_element.width(element_width + '%').bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){ options.listen = 0; });
         }
 
-        if (o.autoanimate == true) {
-          b.removeClass('transitions');
-          move_left(o.delay_time, o.animation_time); // first time initiating the animation function
-          c = a.parent();
+        if (options.autoanimate == true) {
+          slida_element.removeClass('transitions');
+          move_left(options.delay_time, options.animation_time);
+          slida_hover_listener = slida_animation_handler.parent();
 
-          c.mouseover(function() {
-            b_first.stop(true,false);
+          slida_hover_listener.mouseover(function() {
+            first_element.stop(true,false);
           }).mouseout(function(){
-            if (o.time_remaining < 5) {
-              o.time_remaining = 400;
+            if (options.time_remaining < 5) {
+              options.time_remaining = 400;
             };
-              move_left(o.delay_time, o.animation_time, o.easing_type);
+              move_left(options.delay_time, options.animation_time, options.easing_type);
           });
 
         };
 
-        if (o.support == 1) {
+        if (options.support == 1) {
 
           $(window).load(function() {
 
-            if (o.autoanimate == false) {
-              b = $('>div', a);
-              b.addClass('transitions');
+            if (options.autoanimate == false) {
+              slida_element = $('>div', slida_animation_handler);
+              slida_element.addClass('transitions');
             };
 
           });
 
-          o.l_left.on('click', function(event){
-              event.preventDefault();
-              if (o.listen == 1) return;
+          $(options.left_link).on('click', function(e){
+              e.preventDefault();
+              if (options.listen == 1) return;
               move_left_css();
           });
 
-          o.l_right.on('click', function(event){
-              event.preventDefault();
-              if (o.listen == 1) return;
+          $(options.right_link).on('click', function(e){
+              e.preventDefault();
+              if (options.listen == 1) return;
               move_right_css();
           });
         } else {
 
-          o.l_left.on('click', function(event){
-            event.preventDefault();
-            move_left(o.delay_time, o.animation_time, o.easing_type);
-            if ($('>div:animated', a).length > 0) return;     
+          $(options.left_link).on('click', function(e){
+            e.preventDefault();
+            // if ($('>div:animated', slida_animation_handler).length > 0) return;
+            move_left(options.delay_time, options.animation_time, options.easing_type);
           });
 
-          o.l_right.on('click', function(event){
-            event.preventDefault();
-            if ($('>div:animated').length > 0) return;
-            move_right(o.delay_time, o.animation_time, o.easing_type);
+          $(options.right_link).on('click', function(e){
+            e.preventDefault();
+            // if ($('>div:animated', slida_animation_handler).length > 0) return;
+            move_right(options.delay_time, options.animation_time, options.easing_type);
           });
         };
 

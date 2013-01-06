@@ -143,14 +143,14 @@
 	<h4 class="textShadow" title="JS">JS</h4>
 	<pre class="brush: js;">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script type="text/javascript" src="Slida.js"></script>
+	<script type="text/javascript" src="slida.js"></script>
 
 	<script type="text/javascript">
 	$(document).ready(function () {
 
 		$('#handler').create_slider({
-			l_left: $('#link_right'),
-			l_right: $('#link_left')
+			left_link: $('#link_right'),
+			right_link: $('#link_left')
 		});
 
 	});
@@ -165,8 +165,8 @@
         delay_time: 1000, // autoanimate delay
         delay_time_after_stop: 200, // delay after hover out
         width: 100,
-		l_left: $('#link_right') // select by id left arrow
-		l_right: $('#link_left') // select by id right arrow
+		left_link: $('#link_right') // select by id left arrow
+		right_link: $('#link_left') // select by id right arrow
 	</pre>
 </div>
 
@@ -174,19 +174,19 @@
 <!-- the scripts -->
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script type="text/javascript" src="Slida.js"></script>
+<script type="text/javascript" src="slida.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function () {
 
 	$('#handler').create_slider({
-		l_left: $('#link_right'),
-		l_right: $('#link_left')
+		left_link: $('#link_right'),
+		right_link: $('#link_left')
 	});
 
 	$('#handler2').create_slider({
 		autoanimate: true,
-		b_count: 3
+		element_count: 3
 	});
 
 });
