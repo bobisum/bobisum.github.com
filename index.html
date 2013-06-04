@@ -1,196 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
-    <meta charset="utf-8">
-	  <title>Slida</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="responsive slider">
-    <meta name="author" content="bobisum">
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="slida : super lite responsive jquery/css3transition slider" />
 
-    <link href='http://fonts.googleapis.com/css?family=Monda:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-	<link rel="stylesheet" href="stylesheets/screen.css">
+    <title>slida</title>
+  </head>
 
-	<!-- syntaxhighlighter -->
-	<script type="text/javascript" src="js/shCore.js"></script>
-	<script type="text/javascript" src="js/shBrushJScript.js"></script>
-	<script type="text/javascript" src="js/shBrushCss.js"></script>
-	<script type="text/javascript" src="js/shBrushXml.js"></script>
-	<link type="text/css" rel="stylesheet" href="stylesheets/shCoreDefault.css"/>
-	<script type="text/javascript">SyntaxHighlighter.all();</script>
+  <body>
 
-</head>
-<body>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/bobisum">View on GitHub</a>
 
+          <h1 id="project_title">slida</h1>
+          <h2 id="project_tagline">super lite responsive jquery/css3transition slider</h2>
 
-<!-- the content -->
+        </header>
+    </div>
 
-<div id="wrapper">
-	<h2 class="textShadow" title="Slida">Slida</h2>
-	<p class="bsum textShadow" title="bobisum 's">bobisum 's</p>
-	<div id="container"> <!-- demo slider one -->
-		<div id="handler">
-			<div class="one">
-				<div class="contentHelper">
-					<h2 class="textShadow bigger" title="Slida">Slida</h2>
-					<p>is a lite, fully responsive JQuery carousel plugin that uses CSS3 transitions if available.</p>
-				</div>
-			</div>
-			<div class="two">
-				<div class="contentHelper">
-					<h2 class="textShadow" title="It offers">It offers</h2>
-					<p>a few (for now) options that the user can easily choose from.</p>
-				</div>
-			</div>
-			<div class="three">
-				<div class="contentHelper">
-					<h2 class="textShadow" title="Options">Options:</h2>
-					<p>There are 2 main options to choose from: autoanimate and elements count on stage (cool a?!).</p>
-				</div>
-			</div>
-			<div class="four">
-				<div class="contentHelper">
-					<h2 class="textShadow" title="No. of Elements">No. of Elements</h2>
-					<p>You can choose the numbers of the elements that you see on stage (default is 1), and by hitting the left or right arrow you get a movement of only one element (like the slida that has autoanimate on this page).</p>
-				</div>
-			</div>
-			<div class="five">
-				<div class="contentHelper">
-					<h2 class="textShadow" title="Autoanimate">Autoanimate</h2>
-					<p>For now when you use the autoanimate: true; (default is false) you get a self moving slider, one element by time and a hover-stop function which resumes on hover-out with the time left of the animation.</p>
-				</div>
-			</div>
-			<div class="six">
-				<div class="contentHelper">
-					<h2 class="textShadow" title="Autoanimate">Using it</h2>
-					<p>is pretty simple. Just embed JQuery latest and Slida.js on your page and follow the instructions bellow to set up you html, css and js code.</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="navigation">
-		<div id="leftnavi">
-			<div>
-				<span class="navileft"></span>
-			</div><div class="alignHelper"></div>
-			<a href="#" id="link_left"></a>
-		</div>
-		<div id="rightnavi">
-			<div>
-				<span class="naviright"></span>
-			</div><div class="alignHelper"></div>
-			<a href="#" id="link_right"></a>
-		</div>
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
 
-	</div>
-	<div id="container2"> <!-- demo slider two -->
-		<div id="handler2">
-			<div class=""><h1>1</h1></div>
-			<div class=""><h1>2</h1></div>
-			<div class=""><h1>3</h1></div>
-			<div class=""><h1>4</h1></div>
-			<div class=""><h1>5</h1></div>
-			<div class=""><h1>6</h1></div>
-			<div class=""><h1>7</h1></div>
-			<div class=""><h1>8</h1></div>
-			<div class=""><h1>9</h1></div>
-			<div class=""><h1>10</h1></div>
-		</div>
-	</div>
+<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
 
-	<h4 class="textShadow firstCh" title="HTML">HTML</h4>
-	<pre class="brush: html;">
-	<div id="container">
-		<div id="handler">
-			<div class="element">
-				<!-- your content here -->
-			</div>
-		</div>
-	</div>
-	</pre>
+<pre><code>$ cd your_repo_root/repo_name
+$ git fetch origin
+$ git checkout gh-pages
+</code></pre>
 
-	<h4 class="textShadow" title="CSS">CSS</h4>
-	<pre class="brush: css;">
-	#container {
-	  max-width: 648px;
-	  height: auto;
-	  display: block;
-	  overflow: hidden;
-	}
+<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
 
-	#handler{
-	  width: 100%;
-	  height: auto;
-	}
+<h3>
+<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
 
-	.element{
-	  display: block;
-	  min-height: 325px; // what you want
-	  width: 20px; // wont be the real widht you might wont to set this one as you wish :)
-	  float: left;
-	}
+<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
 
-	// the transition class it must have the name transitions but you can change the settings as you wish
-	.transitions {
-	  -webkit-transition: all 1s ease;
-	  -moz-transition: all 1s ease;
-	  -o-transition: all 1s ease;
-	  transition: all 1s ease;
-	}
-	</pre>
+<h3>
+<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
 
-	<h4 class="textShadow" title="JS">JS</h4>
-	<pre class="brush: js;">
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script type="text/javascript" src="slida.js"></script>
+<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
 
-	<script type="text/javascript">
-	$(document).ready(function () {
+<h3>
+<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
 
-		$('#handler').create_slider({
-			left_link: $('#link_right'),
-			right_link: $('#link_left')
-		});
+<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
 
-	});
-	</script>
-	</pre>
+<h3>
+<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
 
-	<h4 class="textShadow" title="Options">Options</h4>
-	<pre class="brush: js;">
-		autoanimate: false, // autoanimate?! (def false) if you add auto animate arrows dont work for now
-		b_count: 3, // count of elements on stage (def 1)
-		easing_type: 'swing', // easing type - choose from jquery easing or add another library ('swing')
-        delay_time: 1000, // autoanimate delay
-        delay_time_after_stop: 200, // delay after hover out
-        width: 100,
-		left_link: $('#link_right') // select by id left arrow
-		right_link: $('#link_left') // select by id right arrow
-	</pre>
-</div>
+<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+      </section>
+    </div>
 
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
 
-<!-- the scripts -->
+    
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script type="text/javascript" src="Slida.js"></script>
-
-<script type="text/javascript">
-$(document).ready(function () {
-
-	$('#handler').create_slider({
-		left_link: $('#link_right'),
-		right_link: $('#link_left')
-	});
-
-	$('#handler2').create_slider({
-		autoanimate: true,
-		element_count: 3
-	});
-
-});
-</script>
-	
-</body>
+  </body>
 </html>
